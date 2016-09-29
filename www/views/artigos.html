@@ -1,0 +1,21 @@
+<ion-view view-title="Artigos">
+  <ion-content>
+ 
+    <ion-list ng-repeat="article in articles">
+      <ion-item ng-click="articleUnico(article.id)">
+        <h2>{{article.titulo}}</h2>
+        <p>{{article.descricao}}</p>
+        <p>{{article.autor}}</p>
+      </ion-item>
+    </ion-list>
+    <div ng-if="article !== undefined && !article.length" class="no-results">
+      <p>Nenhum artigo disponível</p>
+</div>
+  </ion-content>
+  <ion-infinite-scroll
+    ng-show="paginacaoArticles"
+    icon="ion-loading-c"
+    on-infinite="loadMoreArticles()"
+    distance="1%">
+  </ion-infinite-scroll>
+</ion-view>

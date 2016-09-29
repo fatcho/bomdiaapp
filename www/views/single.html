@@ -1,0 +1,15 @@
+<ion-view view-title="Notícia">
+  <ion-nav-bar>   
+         <ion-nav-back-button class="button-dark"></ion-nav-back-button>         
+</ion-nav-bar>
+  <ion-content class="news" ng-repeat="noticia in singleNoticia">
+     
+           <div>
+        <h2>{{noticia.titulo}}</h2>
+        <h4>{{noticia.data}}</h4>
+        <h5>{{noticia.fonte}}</h5>
+        <p>{{noticia.texto}}</p>
+    </div>
+
+  </ion-content>
+</ion-view>

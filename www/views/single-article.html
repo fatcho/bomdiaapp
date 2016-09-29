@@ -1,0 +1,10 @@
+<ion-view view-title="Artigo">
+  <ion-nav-bar>   
+         <ion-nav-back-button class="button-dark"></ion-nav-back-button>         
+</ion-nav-bar>
+  <ion-content class="news" ng-repeat="article in singleArticle">
+    <h1>{{article.titulo}}</h1>
+    <p>{{article.autor}}</p>
+    <p>{{article.descricao}}</p>
+  </ion-content>
+</ion-view>

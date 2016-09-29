@@ -1,0 +1,28 @@
+<ion-view view-title="Notícias">
+  <ion-nav-buttons side="secondary">
+  <button class="buttons button-icon ion-android-search" ng-click="showFilterBar()"></button>
+ </ion-nav-buttons>
+  <ion-content class="news">
+    <ion-refresher pulling-text="Atualizar..." on-refresh="refreshItems()"></ion-refresher>
+    <ion-list ng-repeat="noticia in noticias">
+      <ion-item  ng-click="noticiaUnica(noticia.id)">
+        <h2>{{noticia.titulo}}</h2>
+        <p>{{noticia.texto}}</p>
+        <h4>{{noticia.data}}</h4>
+        <h5>{{noticia.fonte}}</h5>
+      </ion-item>
+    </ion-list>
+    
+    <div ng-if="noticia !== undefined && !noticias.length" class="no-results">
+      <p>Nenhuma notícia disponível</p>
+    </div>
+    
+    <ion-infinite-scroll
+    ng-show="paginacao"
+    icon="ion-loading-c"
+    on-infinite="loadMore()"
+    distance="1%">
+  </ion-infinite-scroll>
+  </ion-content>
+</ion-view>
+
